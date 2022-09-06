@@ -1,3 +1,7 @@
+//Justin Moonjeli
+//GSU CS 1302
+
+
 import java.util.*;
 public class TimesAndInstructors {
 	public static void main(String[] args) {
