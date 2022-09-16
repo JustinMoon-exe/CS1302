@@ -23,6 +23,6 @@ public class CollegeEmployee extends Person {
     public void display() {
         // write your code here
         super.display();
-        System.out.println(ssn + ", " + annualSalary + ", " + dept + ", ");
+        System.out.println(ssn + ", " + annualSalary + ", " + dept);
     }
 }

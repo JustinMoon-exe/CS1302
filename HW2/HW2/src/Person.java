@@ -10,6 +10,8 @@ public class Person {
 
     public void setData() {
         String tempGrade = "";
+
+        // write your code here
         System.out.print("Enter the Person's First Name: ");
         this.firstName = input.next();
         System.out.print("Enter the Person's Last Name: ");
@@ -20,8 +22,6 @@ public class Person {
         this.zip = input.next();
         System.out.print("Enter the Person's Phone Number: ");
         this.phone = input.next();
-        // write your code here
-
     }
 
     public void display() {

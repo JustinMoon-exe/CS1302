@@ -20,6 +20,6 @@ public class Student extends Person {
     public void display() {
         // write your code here
         super.display();
-        System.out.println(major + ", " + gpa + ", ");
+        System.out.println(major + ", " + gpa);
     }
 }
