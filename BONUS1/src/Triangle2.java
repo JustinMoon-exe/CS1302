@@ -1,4 +1,3 @@
-package Abstraction_Interfaces;
 public class Triangle2 extends GeometricFigure2
 {
     private double area;

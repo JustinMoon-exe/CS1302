@@ -1,5 +1,3 @@
-package Abstraction_Interfaces;
-
 public abstract class GeometricFigure2 implements SidedObject, FigureName
 {
     protected int height;

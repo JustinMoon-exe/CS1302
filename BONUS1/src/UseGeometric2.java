@@ -1,4 +1,3 @@
-package Abstraction_Interfaces;
 public class UseGeometric2
 {
     public static void main(String[] args)
