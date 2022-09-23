@@ -1,30 +1,23 @@
-package Abstraction_Interfaces;
-
-public abstract class GeometricFigure2 implements SidedObject, FigureName
-{
+public abstract class GeometricFigure2 implements SidedObject, FigureName {
     protected int height;
     protected int width;
     protected String figure;
 
-    public  GeometricFigure2(int h, int w, String f)
-    {
+    public GeometricFigure2(int h, int w, String f) {
         height = h;
         width = w;
         figure = f;
     }
 
-    public int getHeight()
-    {
+    public int getHeight() {
         return height;
     }
 
-    public int getWidth()
-    {
+    public int getWidth() {
         return width;
     }
 
-    public String getFigure()
-    {
+    public String getFigure() {
         return figure;
     }
 

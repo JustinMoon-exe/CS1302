@@ -1,5 +1,7 @@
 {
     "java.project.sourcePaths": ["src"],
     "java.project.outputPath": "bin",
-    "terminal.explorerKind": "external"
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar"
+    ]
 }
