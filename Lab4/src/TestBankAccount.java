@@ -1,5 +1,4 @@
 public class TestBankAccount {
-
     public static void main(String[] args) throws Exception {
         BankAccount B1 = new BankAccount("Justin", 200.00);
         B1.deposit(500.00);

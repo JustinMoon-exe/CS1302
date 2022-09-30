@@ -1,6 +1,6 @@
 public class Graduate extends Student {
-    private String degree;
-    private String concentration;
+    protected String degree;
+    protected String concentration;
     private int years;
 
     public Graduate(String degree, int years, double gpa, String major, String concentration, int creditHours) {
@@ -18,5 +18,10 @@ public class Graduate extends Student {
 
     public String getConcentration() {
         return (this.concentration);
+    }
+
+    @Override
+    public String toString(){
+        return("Major:" + major + " Concentration:" + concentration + " Years:" + years);
     }
 }

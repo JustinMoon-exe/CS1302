@@ -1,7 +1,7 @@
 public class BankAccount {
     private String name;
     private double balance;
-
+    
     public BankAccount(String name_new, double bal_new) {
         this.name = name_new;
         this.balance = bal_new;
@@ -29,5 +29,4 @@ public class BankAccount {
 
     public BankAccount() {
     }
-
 }

@@ -12,4 +12,9 @@ public class Undergraduate extends Student {
     public boolean isHonors() {
         return (this.honors);
     }
+
+    @Override
+    public String toString(){
+        return("Major:" + major + " GPA:" + gpa + " Year:" + super.getYear() + " Honors:" + isHonors());
+    }
 }
