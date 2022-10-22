@@ -16,11 +16,11 @@ public class GetIDAndAge {
       try {
         // display message using showStatus() to input ID in range 0..999
         // use 'keyboard' scanner to get int value for ID
-        System.out.println("Please input ID (0..999)");
+        showStatus("Please input ID (0..999)");
         id = Integer.parseInt(keyboard.next());
         // display message using showStatus() to input Age in range 0..119
         // use 'keyboard' scanner to get int value for Age3
-        System.out.println("Please input Age (0..119)");
+        showStatus("Please input Age (0..119)");
         age = Integer.parseInt(keyboard.next());
         // call 'check' with ID and Age and set "bSTOP" as value back from 'check'
         bSTOP = check(id, age);
@@ -28,9 +28,9 @@ public class GetIDAndAge {
       } catch (DataEntryException r) {
         System.out.println(r.getMessage());
       // catch block for 'InputMismatchException'
-      } catch (NumberFormatException s) {
-        new DataEntryException(id, age);
-        System.out.println("Invalid Input Type: " + s.getMessage());
+      } catch (InputMismatchException s) {
+        new InputMismatchException();
+        System.out.println(s);
         // }
       }
     }
@@ -46,9 +46,13 @@ public class GetIDAndAge {
     // throw DataEntryException with correct parameters
     // when both idNum and ageNum are zero, return true
 
-    if (idNum > 999 || idNum < 0 || ageNum < 0 || ageNum > 119) {
-      throw new DataEntryException(idNum, ageNum);
+    if (idNum > 999 || idNum < 0) {
+      throw new DataEntryException("Invalid ID Input: ", idNum);
 
+    }
+
+    if( ageNum < 0 || ageNum > 119){
+      throw new DataEntryException("Invalid Age Input: ", ageNum);
     }
 
     if (idNum == 0 && ageNum == 0) {

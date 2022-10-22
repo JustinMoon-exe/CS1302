@@ -1,25 +1,19 @@
-import java.io.BufferedReader;
-import java.io.IOException;
+import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.text.DateFormat;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
+import java.time.format.DateTimeFormatter;
 
 public class BankDataProcessing {
 	static ArrayList<BankAccount> Accounts = new ArrayList<>();
-	static SimpleDateFormat formatter = new SimpleDateFormat("mm-dd-yy");
-	static DateFormat dateFormat = new SimpleDateFormat("mm-dd-yyyy");
-
+	static DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM-dd-yyyy HH:mm");
 	public static void main(String[] args) {
 		try {
 			Path path = Paths.get("src/AccountData.csv");
 			readAccounts(path, true);
-			path = Paths.get("src/BankTransData.csv");
-			readTransactions(path, true, Accounts);
+			Path path2 = Paths.get("src/BankTransData.csv");
+			readTransactions(path2, true, Accounts);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -49,7 +43,7 @@ public class BankDataProcessing {
 	}
 
 	private static void readTransactions(Path Xpath, boolean bHead, ArrayList<BankAccount> Xaccounts)
-			throws IOException, ParseException {
+			throws IOException {
 
 		for (BankAccount a : Xaccounts) {
 			System.out.println("Account for " + a.getAcctname() + ", " + a.getAcctnum());
@@ -74,7 +68,7 @@ public class BankDataProcessing {
 							balance += amnt;
 						}
 						System.out.println(
-								" Transaction date is: " + dateFormat.format(date) + ", " + type + "= " + amnt);
+								" Transaction date: " + formatter.format(date) + ", " + type + "= " + (int)amnt);
 					}
 				}
 				a.setBalance(balance);
@@ -82,7 +76,7 @@ public class BankDataProcessing {
 				System.out.println("------------------------------------------------------------------------");
 			} catch (IOException ioe) {
 				bufferedReader.close();
-				ioe.printStackTrace();
+				//ioe.printStackTrace();
 			} finally {
 				bufferedReader.close();
 			}
