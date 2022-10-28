@@ -4,10 +4,12 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.time.format.DateTimeFormatter;
+import java.time.temporal.TemporalAccessor;
 
 public class BankDataProcessing {
 	static ArrayList<BankAccount> Accounts = new ArrayList<>();
-	static DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM-dd-yyyy HH:mm");
+	static DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM-dd-yyyy");
+
 	public static void main(String[] args) {
 		try {
 			Path path = Paths.get("src/AccountData.csv");
@@ -54,7 +56,7 @@ public class BankDataProcessing {
 				double balance = 0;
 				while ((line = bufferedReader.readLine()) != null) {
 					int acctnum = Integer.parseInt(line.split(",")[0]);
-					Date date = null;
+					TemporalAccessor date = null;
 					double amnt = 0;
 					String type = null;
 					if (acctnum == a.getAcctnum()) {
@@ -68,15 +70,15 @@ public class BankDataProcessing {
 							balance += amnt;
 						}
 						System.out.println(
-								" Transaction date: " + formatter.format(date) + ", " + type + "= " + (int)amnt);
+								" Transaction date: " + formatter.format(date) + ", " + type + "= " + (int) amnt);
 					}
 				}
 				a.setBalance(balance);
 				System.out.println(a.toString());
-				System.out.println("------------------------------------------------------------------------");
+				System.out.println("------------------------------------------------------------");
 			} catch (IOException ioe) {
 				bufferedReader.close();
-				//ioe.printStackTrace();
+				// ioe.printStackTrace();
 			} finally {
 				bufferedReader.close();
 			}
