@@ -55,6 +55,22 @@ public class TestGUICounter {
 			// or 'e.getSource()==...'
 			// very similar to the demonstration I did in class lecture
 			// First, when 'start_val' clicked, then get the value from the 'text_1'
+			JButton button = (JButton) e.getSource();
+            if (button.equals(start_val)) {
+                String startStr = text_1.getText().trim();
+                iCounter = Integer.parseInt(startStr);
+                label_num.setText(startStr);
+            } else if (button.equals(add_1)) {
+                ++iCounter;
+                label_num.setText(Integer.toString(iCounter));
+            } else if (button.equals(minus_1)) {
+                --iCounter;
+                label_num.setText(Integer.toString(iCounter));
+            } else if (button.equals(reset_1)) {
+                iCounter = 0;
+                label_num.setText(Integer.toString(iCounter));
+                text_1.setText("");
+            }
 			// text box (user 'getText()' method) and set the 'label_num' and the
 			// iCounter to be that value. Next, in the if 'add_1' clicked, then
 			// add 1 to the 'iCounter' and update label: 'label_num' and if
