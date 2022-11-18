@@ -1,0 +1,49 @@
+, new balance is 200.0
+, new balance is 200.0
+, new balance is 200.0
+Withdrawing 100.0Withdrawing 100.0, new balance is 100.0
+, new balance is 100.0
+, new balance is 100.0
+Depositing 100.0, new balance is 200.0
+
+, new balance is 200.0
+, new balance is 200.0
+Depositing 100.0Depositing 100.0Withdrawing 100.0Depositing 100.0Withdrawing 100.0, new balance is 300.0
+, new balance is 100.0
+, new balance is 300.0
+, new balance is 300.0
+, new balance is 100.0
+
+, new balance is 0.0
+, new balance is -200.0
+Withdrawing 100.0Withdrawing 100.0Withdrawing 100.0, new balance is 100.0
+, new balance is 100.0
+, new balance is -300.0
+, new balance is -300.0
+, new balance is -300.0
+
+
+Withdrawing 100.0, new balance is 200.0
+Depositing 100.0, new balance is 300.0
+Depositing 100.0, new balance is 400.0
+Withdrawing 100.0, new balance is 300.0
+Withdrawing 100.0, new balance is 200.0
+Withdrawing 100.0, new balance is 100.0
+Withdrawing 100.0, new balance is 0.0
+
+Depositing 100.0, new balance is 200.0
+Withdrawing 100.0, new balance is 100.0
+Withdrawing 100.0, new balance is 0.0
+** Balance 0.0 is < amount 100.0 now waiting...
+Depositing 100.0, new balance is 100.0
+Withdrawing 100.0, new balance is 0.0
+
+** Balance 0.0 is < amount 100.0 now waiting...
+Depositing 100.0, new balance is 100.0
+Depositing 100.0, new balance is 200.0
+Depositing 100.0, new balance is 300.0
+Withdrawing 100.0, new balance is 200.0
+Withdrawing 100.0, new balance is 100.0
+Withdrawing 100.0, new balance is 0.0
+
+

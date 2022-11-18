@@ -25,47 +25,56 @@ public class Num2WordsRecur {
     }
 
     private static String numToWord(int num) {
-        String s = "";
+        String words = "";
 
-        if (num == 0)
-            return "zero";
+        if (num == 0) {
+			return "zero";
+		}
+        // add minus before conversion if the number is less than 0
         if (num < 0) {
-            // add minus before conversion if the number is less than 0
             String str = "" + num;
-            // convert num into string
-            str = str.substring(1);
-            // remove minus before the number
+            // 1) convert the number to a string
+            str = str.substring(1); 
+			// 2) remove minus before the number
             return "minus " + numToWord(Integer.parseInt(str));
-            // add minus before the number and convert the rest of number
+			// 3) add "minus" spelled word before the number and convert the rest with 
+			//     recursion like a positive
         }
+        // First: check if number is divisible by 1 million (use modulo %)
+		//          hint: if(num/1000000 > 0) ...
         if ((num / 1000000) > 0) {
             // check if number is divisible by 1 million
-            s += numToWord(num / 1000000) + " million ";
+            words += numToWord(num / 1000000) + " million ";
             num %= 1000000;
         }
+        // Secondly: check if number is divisible by 1 thousand 
+		//          hint: if(num/1000 > 0) ...
         if ((num / 1000) > 0) {
             // check if number is divisible by 1 thousand
-            s += numToWord(num / 1000) + " thousand ";
+            words += numToWord(num / 1000) + " thousand ";
             num %= 1000;
         }
+        // Thirdly: check if number is divisible by 1 hundred
+		//          hint: if(num/100 > 0) ...
         if ((num / 100) > 0) {
             // check if number is divisible by 1 hundred
-            s += numToWord(num / 100) + " hundred ";
+            words += numToWord(num / 100) + " hundred ";
             num %= 100;
         }
+
         if (num > 0) {
-            // check if number is within teens
-            if (num < 20) {
-                // fetch the appropriate value from unit array
-                s += unitsArray[num];
-            } else {
-                // fetch the appropriate value from tens array
-                s += tensArray[num / 10];
-                if ((num % 10) > 0) {
-                    s += "-" + unitsArray[num % 10];
-                }
-            }
-        }
-        return s;
+			// check if number is within teens
+			if (num < 20) { 
+				// fetch the appropriate value from unit array
+				words += unitsArray[num];
+			} else { 
+				// fetch the appropriate value from tens array
+				words += tensArray[num/10]; 
+				if ((num % 10) > 0) {
+					words += "-" + unitsArray[num%10];
+				}  
+			}
+		}
+		return words;
     }
 }
